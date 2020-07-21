@@ -29,6 +29,7 @@
                     <th>#</th>
                     <th>가게명</th>
                     <th>예약자명</th>
+                    <th>예약날짜</th>
                     <th>예약인원</th>
                 </tr>
             </thead>
@@ -37,6 +38,7 @@
                 <td th:text="${reserve.id}"></td>
                 <td><a th:href="@{'/store/' + ${reserve.storeId}}" th:text="${reserve.name}"></a></td>
                 <td th:text="${reserve.reserver}"></td>
+                <td th:text="${reserve.reserve_date}"></td>
                 <td th:text="${reserve.count}"></td>
             </tr>
             </tbody>

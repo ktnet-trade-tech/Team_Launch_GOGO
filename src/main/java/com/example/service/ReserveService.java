@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,14 +30,14 @@ public class ReserveService {
     }
 
     @Transactional
-    public Long reserve(Long companyId, Long storeId, String reserver, int count){
+    public Long reserve(Long companyId, Long storeId, String reserver, Date reserve_date, int count){
 
         // 엔티티 조회
         Company company = companyRepository.findById(companyId).orElseThrow(EntityNotFoundException::new);
         Store store = storeRepository.findById(storeId).orElseThrow(EntityNotFoundException::new);
 
         // 가게 예약 생성
-        Reserve reserveStore = Reserve.createStore(store,reserver,count);
+        Reserve reserveStore = Reserve.createStore(store, reserver, reserve_date, count);
 
         // 회사 예약 생성
         Company reserveCompany = Company.createCompany(company,reserveStore);

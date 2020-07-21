@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,8 +46,9 @@ public class ReserveController {
     public String create(@RequestParam("companyId") Long companyId,
                          @RequestParam("storeId") Long storeId,
                          @RequestParam("reserver") String reserver,
+                         @RequestParam("reserve_date") Date reserve_date,
                          @RequestParam("count") int count){
-        reserveService.reserve(companyId,storeId,reserver,count);
+        reserveService.reserve(companyId, storeId, reserver, reserve_date, count);
         return "redirect:/";
     }
 
