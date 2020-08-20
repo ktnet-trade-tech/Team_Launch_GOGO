@@ -6,21 +6,22 @@
     <div th:replace="fragments/bodyHeader :: bodyHeader"></div>
     <div class="jumbotron">
         <p class="lead">
-            <span sec:authentication="name"></span>님, 안녕하세요!
-        <p>
-        <p>
-            <a class="btn btn-lg btn-secondary" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/users}">사용자관리</a>
-            <a class="btn btn-lg btn-secondary" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/auths}">권한관리</a>
+            <a class="btn btn-lg btn-info" th:href="@{/store/new}">가게등록</a>
+            <a class="btn btn-lg btn-info" th:href="@{/store/list}">가게목록</a>
         </p>
-        <p>
-            <a class="btn btn-lg btn-dark" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/users/info}">접속권한관리</a>
-            <a class="btn btn-lg btn-dark" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/users}">Client관리</a>
+        <p class="lead">
+            <a class="btn btn-lg btn-secondary" th:href="@{/reserve}">회식장소등록</a>
+            <a class="btn btn-lg btn-secondary" th:href="@{/reserve/list}">회식장소목록</a>
         </p>
-        <p>
-            <a class="btn btn-lg btn-info" sec:authorize="hasRole('ROLE_USER')" th:href="@{/users/info}">내정보</a>
-            <a class="btn btn-lg btn-info" sec:authorize="isAuthenticated()" th:href="@{/users/logout}">로그아웃</a>
-            <a class="btn btn-lg btn-info" sec:authorize="isAnonymous()" th:href="@{/users/login}">로그인</a>
-            <a class="btn btn-lg btn-info" sec:authorize="isAnonymous()" href="/users/new">회원 가입</a>
+        <p class="lead">
+            <a class="btn btn-lg btn-dark" th:href="@{/user/new}">유저등록</a>
+            <a class="btn btn-lg btn-dark" th:href="@{/user/list}">유저목록</a>
+        </p>
+        <p class="lead">
+
+        </p>
+        <p class="lead">
+
         </p>
     </div>
     <div th:replace="fragments/footer :: footer"></div>
