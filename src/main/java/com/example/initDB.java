@@ -6,7 +6,6 @@ import com.example.domain.store.Store;
 import com.example.domain.store.StoreType;
 import com.example.domain.user.User;
 import com.example.repository.CompanyRepository;
-import com.example.service.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
